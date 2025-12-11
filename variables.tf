@@ -21,3 +21,33 @@ variable "public_subnet_cidrs" {
   type        = list(string)
   default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
+
+variable "allowed_ssh_cidr_block" {
+  description = "Optional admin SSH CIDR (e.g. 203.0.113.5/32). Leave empty to disable."
+  type        = string
+  default     = ""
+}
+
+variable "instance_type" {
+  description = "EC2 instance type for ASG instances"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "desired_capacity" {
+  description = "Desired number of instances in ASG"
+  type        = number
+  default     = 2
+}
+
+variable "min_size" {
+  description = "Min ASG size"
+  type        = number
+  default     = 1
+}
+
+variable "max_size" {
+  description = "Max ASG size"
+  type        = number
+  default     = 4
+}
