@@ -1,3 +1,4 @@
+# Region & naming
 variable "aws_region" {
   description = "AWS region to deploy into"
   type        = string
@@ -10,6 +11,7 @@ variable "project_name" {
   default     = "bo-autoheal"
 }
 
+# Networking
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
@@ -22,12 +24,14 @@ variable "public_subnet_cidrs" {
   default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
+# Access
 variable "allowed_ssh_cidr_block" {
   description = "Optional admin SSH CIDR (e.g. 203.0.113.5/32). Leave empty to disable."
   type        = string
   default     = ""
 }
 
+# Compute / ASG
 variable "instance_type" {
   description = "EC2 instance type for ASG instances"
   type        = string
